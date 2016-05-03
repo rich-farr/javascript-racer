@@ -1,0 +1,36 @@
+* {
+  /* border: 1px solid red; */
+}
+
+body {
+  background: green;
+}
+
+.racer_table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+
+.racer_table td {
+  height: 5em;
+}
+
+.racer_table tr {
+  /* width: 100%; */
+}
+
+.racer_table td.active {
+  /* background-color: black; */
+}
+
+#player1_strip td, #player2_strip td {
+  background-color: #808080;
+  border: 5px red;
+  border-style: dashed none;
+}
+
+img {
+  transform: rotate(-90deg);
+  width: 25%;
+}
