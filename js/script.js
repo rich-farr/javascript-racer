@@ -1,3 +1,20 @@
+var playerOne = document.getElementById('player_1');
+var playerTwo = document.getElementById('player_2');
+var carPos = 0;
+
+function updatePlayerPosition(player) {
+    carPos += 2;
+    player.style.left = carPos + 'em';
+}
+
+document.onkeyup = function(e) {
+  if (e.which === 81) {
+    updatePlayerPosition(playerOne);
+  } 
+  if (e.which === 39) {
+    updatePlayerPosition(playerTwo);
+  }
+};
 
 // var startButton = document.getElementById("start_button"); //start_race is the Start button
 // var trackOne = document.getElementById("player1_strip");
@@ -5,11 +22,6 @@
 
 // var carOne = document.getElementById("car1");
 
-// // startButton.addEventListener ("click", function() {
-// //   if (carOne.className === "hide") {
-// //     carOne.className = "";
-// //   } else carOne.className = "hide";
-// // });
 
 // function moveKeypress(event) {
 //   if(event.which === 13) {
@@ -66,22 +78,8 @@
 //     updatePlayerPosition(player2_moves)
 //   }
 // };
-
-var playerOne = document.getElementById('player_1');
-var playerTwo = document.getElementById('player_2');
-var carPos = 0;
-
-function moveCar(e) {
-  if (e.keyCode == 39) {
-    carPos += 2;
-    playerOne.style.left = carPos + 'em';
-  }
-
-  if (e.keyCode == 37) {
-    carPos -= 2;
-    playerOne.style.left = carPos + 'em';
-  }
-
-};
-
-document.onkeyup = moveCar;
+// startButton.addEventListener ("click", function() {
+//   if (this.className === "hide") {
+//     this.className = "";
+//   } else this.className = "hide";
+// })

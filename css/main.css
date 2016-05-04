@@ -1,36 +1,10 @@
-/* * {
-  border: 1px solid red;
+* {
+  /* border: 1px solid red; */
 }
 
 body {
   background: green;
 }
-
-
-.racer_table {
-  width: 100%;
-  table-layout: fixed;
-}
-
-
-.racer_table td {
-  height: 5em;
-}
-
-
-#player1_strip, #player2_strip {
-  background-color: #808080;
-  border: 5px red;
-  border-style: dashed none;
-}
-
-.racer_table td.active {
-  background-color: black;
-}
-
-.hide {
-  display: none;
-} */
 
 img {
   transform: rotate(-90deg) translateY(50%);
@@ -40,10 +14,16 @@ img {
 #player1_strip, #player2_strip {
   height: 200px;
   width: 100%;
-  border: 1px solid black;
+  background-color: #808080;
+  border: 5px red;
+  border-style: dashed none;
   position: relative;
 }
 
-#player_1 {
+#player_1, #player_2 {
   position: absolute;
 }
+
+/* .hide {
+  display: none;
+} */
