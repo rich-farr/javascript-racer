@@ -6,6 +6,7 @@ body {
   background: green;
 }
 
+
 .racer_table {
   width: 100%;
   table-layout: fixed;
@@ -31,6 +32,10 @@ body {
 }
 
 img {
-  transform: rotate(-90deg);
+  transform: rotate(-90deg) translateY(50%);
   width: 25%;
+}
+
+.hide {
+  display: none;
 }
