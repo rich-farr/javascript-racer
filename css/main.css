@@ -1,0 +1,29 @@
+* {
+  /* border: 1px solid red; */
+}
+
+body {
+  background: green;
+}
+
+img {
+  transform: rotate(-90deg) translateY(50%);
+  width: 100px;
+}
+
+#player1_strip, #player2_strip {
+  height: 200px;
+  width: 100%;
+  background-color: #808080;
+  border: 5px red;
+  border-style: dashed none;
+  position: relative;
+}
+
+#player_1, #player_2 {
+  position: absolute;
+}
+
+/* .hide {
+  display: none;
+} */
