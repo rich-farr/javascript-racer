@@ -1,27 +1,38 @@
 * {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 body {
   background: green;
 }
 
-img {
-  transform: rotate(-90deg) translateY(50%);
-  width: 100px;
+/* #start_line {
+  transform: rotate(-90deg) translateY(-600%) translateX(-48.8%);  
+  position: absolute;
+  width: 33.2%;
+  z-index: 1;
 }
+
+#finish_line {
+  transform: rotate(-90deg) translateY(3200%) translateX(-48.8%);  
+  position: absolute;
+  width: 33.2%;
+  z-index: 1;
+} */
 
 #player1_strip, #player2_strip {
   height: 200px;
   width: 100%;
   background-image: url(../img/straightLR.png);
+  background-size: contain;
   position: relative;
 }
 
 #player_1, #player_2 {
   position: absolute;
+  height: 100%;
 }
 
-/* .hide {
-  display: none;
-} */
+.car {
+padding-top: 40%;
+}
