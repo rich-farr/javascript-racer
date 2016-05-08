@@ -4,26 +4,18 @@
 
 body {
   background: green;
+  background-image: url(../img/grass-texture.jpg);
 }
 
-/* #start_line {
-  transform: rotate(-90deg) translateY(-600%) translateX(-48.8%);  
-  position: absolute;
-  width: 33.2%;
-  z-index: 1;
+h1, h5 {
+  color: white;
+  padding-left: 2%;
 }
-
-#finish_line {
-  transform: rotate(-90deg) translateY(3200%) translateX(-48.8%);  
-  position: absolute;
-  width: 33.2%;
-  z-index: 1;
-} */
 
 #player1_strip, #player2_strip {
   height: 200px;
   width: 100%;
-  background-image: url(../img/straightLR.png);
+  background-image: url(../img/road_texture.jpg);
   background-size: contain;
   position: relative;
 }
@@ -31,8 +23,26 @@ body {
 #player_1, #player_2 {
   position: absolute;
   height: 100%;
+  z-index:2;
 }
 
 .car {
 padding-top: 40%;
+}
+
+#start {
+  position: absolute;
+  background-color: #aaa;
+  background-size:60px 60px;
+  left: 12%;
+  height: 100%;
+  width: .3em;
+}
+
+#finish {
+  position: absolute;
+  background-color: #aaa;
+  left: 87%;
+  height: 100%;
+  width: .3em;
 }
