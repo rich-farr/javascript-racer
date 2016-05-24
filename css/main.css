@@ -26,8 +26,9 @@ h1, h5 {
   z-index:2;
 }
 
-.car {
-padding-top: 40%;
+.hide-car {
+  display: none;
+  padding-top: 40%;
 }
 
 #start {
