@@ -1,17 +1,8 @@
 var positions = [0, 0];
 
-// var el = document.getElementsByClassName("hide-car");
-
-// el.addEventListener("keypress", function(startGame));
-
-// function startGame() {
-//   console.log("omglolwtf");
-//   var newClass = document.getElementsByClassName("hide-car");
-//   for (var i = 0; i < newClass.length; i++) {
-//     newClass[0].className = "car";
-//   }
+// function chooseCar () {
+//   prompt("Player 1, please choose your car");
 // }
-
 
 function startGame() {
   for (var i = 0; i < 2; i++) {
@@ -19,9 +10,6 @@ function startGame() {
     var playerCar = "player_" + (i + 1);
     var addCar = document.getElementById(playerCar);
     addCar.innerHTML = '<img src="img\/' + cars[i] + '_car.png" class="car">';
-    console.log(addCar);
-    // var addCar = document.getElementBy("hide-car");
-    // newClass[0].className = "car";
   }
 }
 
@@ -41,6 +29,8 @@ function updatePlayerPosition(player_number) {
   }
   
   function resetGame () {
+    player_1.innerHTML = '';
+    player_2.innerHTML = '';
     for (var i = 0; i < positions.length; i++) {
       positions[i] = 0;
       player_1.style.left = 0;
