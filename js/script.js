@@ -1,21 +1,5 @@
 var positions = [0, 0];
 
-function lights () {
-  var showLight = document.getElementById('lightbox');
-  showLight.innerHTML = '<img src="img\/0_red.png" class="light">';
-
-  (function myLoop(i) {         
-    setTimeout(function () {  
-      showLight.innerHTML = '<img src="img\/' + (i - 1) + '_red.png" class="light">';    
-      if (i === 1) {
-        setTimeout(function () {
-        showLight.innerHTML = '<img src="img\/all_green.png" class="light">';
-        }, 1000)
-      }        
-      if (--i) myLoop(i);
-     }, 1000)
-  })(4);
-}
 
 function chooseCar () {
   var cars = ['red', 'yellow', 'green', 'blue', 'black', 'silver', 'orange', 'white'];
@@ -35,6 +19,28 @@ function placeCars(array) {
     var addCar = document.getElementById(playerCar);
     addCar.innerHTML = '<img src="img\/' + array[i] + '_car.png" class="car">';
   }
+  alert("Press Enter or OK to start the race");
+  lights();
+}
+
+function lights () {
+  var showLight = document.getElementById('lightbox');
+  showLight.innerHTML = '<img src="img\/0_red.png" class="light">';
+
+  (function myLoop(i) {         
+    setTimeout(function () {  
+      showLight.innerHTML = '<img src="img\/' + (i - 1) + '_red.png" class="light">';    
+      if (i === 1) {
+        setTimeout(function () {
+        showLight.innerHTML = '<img src="img\/all_green.png" class="light">';
+          setTimeout(function () {
+            showLight.innerHTML = '';
+          }, 1000)
+        }, 1000)
+      }        
+      if (--i) myLoop(i);
+     }, 1000)
+  })(4);
 }
 
 function updatePlayerPosition(player_number) {
@@ -66,9 +72,6 @@ document.onkeyup = function (e) {
   switch (e.which) {
     case 32:
       chooseCar();
-      break;
-    case 13:
-      lights();
       break;
     case 81:
       updatePlayerPosition(1);
