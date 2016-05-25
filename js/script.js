@@ -5,6 +5,8 @@ function chooseCar () {
   var playerCars = [];
   for (var i = 0; i < 2; i++) {
   var choice = prompt('Player ' + (i + 1) + ', what colour car would you like?\n\nThe options are: ' + cars +'.');
+    choice = choice.toLowerCase();
+    console.log(choice);
     playerCars.push(choice);
   }
   startGame(playerCars);
