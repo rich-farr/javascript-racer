@@ -15,7 +15,6 @@ function startGame() {
 
 function updatePlayerPosition(player_number) {
   var player = document.getElementById('player_' + player_number)
-
   var arrayIndex = player_number - 1;
   var position = positions[arrayIndex];
 
@@ -27,7 +26,8 @@ function updatePlayerPosition(player_number) {
     player.style.left = position + '%';
     positions[arrayIndex] = position;
   }
-  
+}
+
   function resetGame () {
     player_1.innerHTML = '';
     player_2.innerHTML = '';
@@ -37,7 +37,6 @@ function updatePlayerPosition(player_number) {
       player_2.style.left = 0;
     }
   }
-}
 
 document.onkeyup = function (e) {
   switch (e.which) {
