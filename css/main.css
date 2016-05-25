@@ -7,9 +7,26 @@ body {
   background-image: url(../img/grass-texture.jpg);
 }
 
+#titles {
+  display: flex;
+}
+
 h1, h5 {
   color: white;
-  padding-left: 2%;
+  margin: .2em;
+  text-shadow: 2px 2px 8px #000;
+}
+
+h1 {
+  font-family: 'Faster One', cursive;
+  font-size: 3.5em;
+  color: #f0e68c;
+}
+
+h5 {
+  font-family: 'Racing Sans One', cursive;
+  font-size: 1em;
+  color: #ffffe0;
 }
 
 #player1_strip, #player2_strip {
