@@ -1,15 +1,20 @@
 var positions = [0, 0];
 
-// function chooseCar () {
-//   prompt("Player 1, please choose your car");
-// }
-
-function startGame() {
+function chooseCar () {
+  var cars = ['red', 'yellow', 'green', 'blue', 'black', 'silver', 'orange', 'white'];
+  var playerCars = [];
   for (var i = 0; i < 2; i++) {
-    var cars = ['red', 'yellow'];
+  var choice = prompt('Player ' + (i + 1) + ', what colour car would you like?\n\nThe options are: ' + cars +'.');
+    playerCars.push(choice);
+  }
+  startGame(playerCars);
+}
+
+function startGame(array) {
+  for (var i = 0; i < 2; i++) {
     var playerCar = "player_" + (i + 1);
     var addCar = document.getElementById(playerCar);
-    addCar.innerHTML = '<img src="img\/' + cars[i] + '_car.png" class="car">';
+    addCar.innerHTML = '<img src="img\/' + array[i] + '_car.png" class="car">';
   }
 }
 
@@ -41,8 +46,11 @@ function updatePlayerPosition(player_number) {
 document.onkeyup = function (e) {
   switch (e.which) {
     case 32:
-      startGame();
+      chooseCar();
       break;
+    // case 32:
+    //   startGame();
+    //   break;
     case 81:
       updatePlayerPosition(1);
       break;
