@@ -1,6 +1,5 @@
 var positions = [0, 0];
 
-
 function chooseCar () {
   var cars = ['red', 'yellow', 'green', 'blue', 'black', 'silver', 'orange', 'white'];
   var playerCars = [];
@@ -26,20 +25,21 @@ function lights () {
   var showLight = document.getElementById('lightbox');
   showLight.innerHTML = '<img src="img\/0_red.png" class="light">';
 
-  (function myLoop(i) {         
+  (function myLoop(i, j) {         
     setTimeout(function () {  
-      showLight.innerHTML = '<img src="img\/' + (i - 1) + '_red.png" class="light">';    
-      if (i === 1) {
+      showLight.innerHTML = '<img src="img\/' + i + '_red.png" class="light">';    
+      if (j === 1) {
         setTimeout(function () {
         showLight.innerHTML = '<img src="img\/all_green.png" class="light">';
           setTimeout(function () {
             showLight.innerHTML = '';
-          }, 1000)
-        }, 1000)
-      }        
-      if (--i) myLoop(i);
+          }, 500)
+        }, (Math.random() * 5000))
+      }    
+      i++;    
+      if (--j) myLoop(i, j);
      }, 1000)
-  })(4);
+  })(0, 4);
 }
 
 function updatePlayerPosition(player_number) {
