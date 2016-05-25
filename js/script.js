@@ -7,14 +7,13 @@ function chooseCar () {
   for (var i = 0; i < 2; i++) {
   var choice = prompt('Player ' + (i + 1) + ', what colour car would you like?\n\nThe options are: ' + cars +'.');
     choice = choice.toLowerCase();
-    console.log(choice);
     playerCars.push(choice);
   }
   placeCars(playerCars);
 }
 
 function placeCars(array) {
-  for (var i = 0; i < 2; i++) {
+  for (var i = 0; i < array.length; i++) {
     var playerCar = "player_" + (i + 1);
     var addCar = document.getElementById(playerCar);
     addCar.innerHTML = '<img src="img\/' + array[i] + '_car.png" class="car">';
@@ -68,16 +67,23 @@ function updatePlayerPosition(player_number) {
     }
   }
 
-document.onkeyup = function (e) {
-  switch (e.which) {
-    case 32:
+document.onkeydown = function (e) {
+  if (e.which === 32) {
       chooseCar();
-      break;
+  }
+}
+
+document.onkeyup = function (e) {
+  if (document.getElementById('lightbox').hasChildNodes()) {
+    // do nothing
+  } else {
+  switch (e.which) {
     case 81:
       updatePlayerPosition(1);
       break;
     case 80:
       updatePlayerPosition(2);
       break;
+    }
   }
 }
