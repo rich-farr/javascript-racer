@@ -17,8 +17,7 @@ function placeCars(array) {
     var addCar = document.getElementById(playerCar);
     addCar.innerHTML = '<img src="img\/' + array[i] + '_car.png" class="car">';
   }
-  alert("Press Enter or OK to start the race");
-  lights();
+  alert("Press OK, then Enter to start the race");
 }
 
 function lights () {
@@ -48,7 +47,7 @@ function updatePlayerPosition(player_number) {
   var position = positions[arrayIndex];
 
   if (position >= 88) {
-    alert('Player ' + player_number + ' wins!');
+    alert('Player ' + player_number + ' wins!\nPress OK, then Enter to race again!');
     resetGame();
   } else {
     position += 1;
@@ -58,8 +57,6 @@ function updatePlayerPosition(player_number) {
 }
 
   function resetGame () {
-    player_1.innerHTML = '';
-    player_2.innerHTML = '';
     for (var i = 0; i < positions.length; i++) {
       positions[i] = 0;
       player_1.style.left = 0;
@@ -70,6 +67,8 @@ function updatePlayerPosition(player_number) {
 document.onkeydown = function (e) {
   if (e.which === 32) {
       chooseCar();
+  } if (e.which === 13) {
+      lights();
   }
 }
 
