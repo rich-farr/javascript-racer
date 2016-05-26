@@ -50,7 +50,7 @@ h5 {
 
 .light {
   position: absolute;
-  top: 39%;
+  top: 33%;
   left: 50%;
   height: 185px;
   width: 250px;
@@ -59,7 +59,7 @@ h5 {
   transform: translate(-50%);
 }
 
-#start {
+/* #start {
   position: absolute;
   background-color: #aaa;
   background-size:60px 60px;
@@ -74,4 +74,4 @@ h5 {
   left: 87%;
   height: 100%;
   width: .3em;
-}
+} */

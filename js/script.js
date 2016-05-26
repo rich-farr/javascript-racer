@@ -1,4 +1,5 @@
 var positions = [0, 0];
+var speeds = [0, 0];
 
 function chooseCar () {
   var cars = ['red', 'yellow', 'green', 'blue', 'black', 'silver', 'orange', 'white'];
@@ -44,25 +45,28 @@ function lights () {
 function updatePlayerPosition(player_number) {
   var player = document.getElementById('player_' + player_number)
   var arrayIndex = player_number - 1;
+  var speed = speeds[arrayIndex];
   var position = positions[arrayIndex];
+  var finish = window.innerWidth;
 
-  if (position >= 88) {
+  if (position >= (finish - 173)) {
     alert('Player ' + player_number + ' wins!\nPress OK, then Enter to race again!');
     resetGame();
   } else {
-    position += 1;
-    player.style.left = position + '%';
-    positions[arrayIndex] = position;
+    speed += 0.3;
+    position += speed;
+    player.style.left = position + 'px';
+    positions[arrayIndex] = position
+    speeds[arrayIndex] = speed;
   }
 }
 
-  function resetGame () {
-    for (var i = 0; i < positions.length; i++) {
-      positions[i] = 0;
-      player_1.style.left = 0;
-      player_2.style.left = 0;
-    }
-  }
+function resetGame () {
+  positions = [0, 0];
+  speeds = [0, 0];
+  player_1.style.left = 0;
+  player_2.style.left = 0;
+}
 
 document.onkeydown = function (e) {
   if (e.which === 32) {
