@@ -37,15 +37,10 @@ h5 {
   position: relative;
 }
 
-#player_1, #player_2 {
-  position: absolute;
-  height: 100%;
-  z-index:2;
-}
-
 .car {
-  display: initial;
-  padding-top: 40%;
+  position: absolute;
+  top: 32.75%;
+  z-index: 2;
 }
 
 .light {

@@ -14,9 +14,9 @@ function chooseCar () {
 
 function placeCars(array) {
   for (var i = 0; i < array.length; i++) {
-    var playerCar = "player_" + (i + 1);
+    var playerCar = "player" + (i + 1) + "_strip";
     var addCar = document.getElementById(playerCar);
-    addCar.innerHTML = '<img src="img\/' + array[i] + '_car.png" class="car">';
+    addCar.innerHTML = '<img src="img\/' + array[i] + '_car.png" id = "player_' + (i + 1) + '" class="car">';
   }
   alert("Press OK, then Enter to start the race");
 }
@@ -49,7 +49,7 @@ function updatePlayerPosition(player_number) {
   var position = positions[arrayIndex];
   var finish = window.innerWidth;
 
-  if (position >= (finish - 173)) {
+  if (position >= (finish - 165)) {
     alert('Player ' + player_number + ' wins!\nPress OK, then Enter to race again!');
     resetGame();
   } else {
